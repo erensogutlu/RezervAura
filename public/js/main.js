@@ -24,28 +24,37 @@ const toplamMasaSayisi = 10; // kafedeki toplam masa sayısı
 const baslangicSaat = 9; // sabah 9
 const bitisSaat = 22; // akşam 10
 
+tarihInput.addEventListener("change", () => {
+	saatleriDoldur();
+	bosMasalariGetir();
+});
+
 // saat seçeneklerini doldurma fonksiyonu
 function saatleriDoldur() {
-	saatSelect.innerHTML = ""; // önceki seçenekleri temizle
+	saatSelect.innerHTML = ""; // saatleri temizle
+
+	const bugun = new Date();
+	const bugunYil = bugun.getFullYear();
+	const bugunAy = (bugun.getMonth() + 1).toString().padStart(2, "0");
+	const bugunGun = bugun.getDate().toString().padStart(2, "0");
+	const bugunSaat = bugun.getHours();
+
+	const secilenTarih = tarihInput.value;
+
 	for (let s = baslangicSaat; s <= bitisSaat; s++) {
 		const option = document.createElement("option");
-		const saatString = s < 10 ? `0${s}:00` : `${s}:00`;
+		const saatString = s.toString().padStart(2, "0") + ":00";
 		option.value = saatString;
 		option.textContent = saatString;
 
-		// eğer seçilen tarih bugünün tarihi ise ve saat geçmişte ise disabled yap
-		const secilenTarih = tarihInput.value;
-		const bugun = new Date();
-		const saatliTarih = new Date(`${secilenTarih}T${saatString}`);
+		// Eğer seçilen tarih bugünün tarihi ise ve saat geçmişse disable yap
 		if (
-			secilenTarih ===
-				`${bugun.getFullYear()}-${(bugun.getMonth() + 1)
-					.toString()
-					.padStart(2, "0")}-${bugun.getDate().toString().padStart(2, "0")}` &&
-			saatliTarih < bugun
+			secilenTarih === `${bugunYil}-${bugunAy}-${bugunGun}` &&
+			s <= bugunSaat
 		) {
 			option.disabled = true;
 		}
+
 		saatSelect.appendChild(option);
 	}
 }
@@ -246,8 +255,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	tarihInput.value = `${bugun.getFullYear()}-${ay}-${gun}`;
 	tarihInput.min = `${bugun.getFullYear()}-${ay}-${gun}`; // geçmiş tarihleri engelle
 
-	saatleriDoldur(); // saat seçeneklerini doldur
-	bosMasalariGetir(); // başlangıçta boş masaları göster
+	saatleriDoldur(); // saatleri yeniden oluştur
+	bosMasalariGetir(); // ardından boş masaları getir
 });
 
 // toggle
