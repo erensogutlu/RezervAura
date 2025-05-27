@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="tr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>RezervAura - Rezervasyon Yap</title>
+		<link rel="icon" href="icons/event.svg" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+		/>
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="container">
+				<h1 class="logo">RezervAura</h1>
+				<div class="toggle-btn" id="toggleBtn">&#9776;</div>
+				<ul class="nav-links" id="navLinks">
+					<li class="secili"><a href="index.html">Rezervasyon Yap</a></li>
+					<li><a href="rezervasyonlarim.html">Rezervasyonlarım</a></li>
+					<li><a href="admin.html">Admin Paneli</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="ana-icerik">
+			<div class="container">
+				<h2>Rezervasyon Yap</h2>
+				<div class="rezervasyon-formu-kutusu">
+					<form id="rezervasyonFormu">
+						<div class="form-grubu">
+							<label for="adSoyad">Adınız Soyadınız:</label>
+							<input type="text" id="adSoyad" required />
+						</div>
+						<div class="form-grubu">
+							<label for="telefon">Telefon Numaranız:</label>
+							<input
+								type="tel"
+								id="telefon"
+								pattern="[0-9]{10}"
+								placeholder="Örnek: 5xxxxxxxxx"
+								required
+							/>
+						</div>
+						<div class="form-grubu">
+							<label for="tarih">Tarih:</label>
+							<input type="date" id="tarih" required />
+						</div>
+						<div class="form-grubu">
+							<label for="saat">Saat:</label>
+							<select id="saat" required></select>
+						</div>
+						<div class="form-grubu">
+							<label for="kisiSayisi">Kişi Sayısı:</label>
+							<input type="number" id="kisiSayisi" min="1" max="10" required />
+						</div>
+						<div class="form-grubu">
+							<label>Boş Masalar:</label>
+							<div id="masaSecenekleri" class="masa-grid"></div>
+							<input type="hidden" id="secilenMasaNo" />
+						</div>
+						<button type="submit" class="button">Rezervasyon Yap</button>
+					</form>
+					<p id="mesaj" class="mesaj"></p>
+				</div>
+			</div>
+		</div>
+
+		<footer class="site-footer">
+			<div class="footer-container">
+				<div class="footer-section about">
+					<h3 class="footer-logo">RezervAura</h3>
+					<p>"Masanın enerjisini hisset."</p>
+					<div class="social-icons">
+						<a
+							href="https://www.facebook.com/"
+							aria-label="Facebook"
+							target="_blank"
+							><i class="fab fa-facebook-f"></i
+						></a>
+						<a
+							href="https://x.com/1e1r1e1n0"
+							aria-label="Twitter"
+							target="_blank"
+							><i class="fab fa-twitter"></i
+						></a>
+						<a
+							href="https://www.instagram.com/erensogutlu/"
+							aria-label="Instagram"
+							target="_blank"
+							><i class="fab fa-instagram"></i
+						></a>
+						<a
+							href="https://www.linkedin.com/in/eren-s%C3%B6%C4%9F%C3%BCtl%C3%BC-11809b326/"
+							aria-label="LinkedIn"
+							target="_blank"
+							><i class="fab fa-linkedin-in"></i
+						></a>
+					</div>
+				</div>
+
+				<div class="footer-section links">
+					<h4>Bağlantılar</h4>
+					<ul>
+						<li><a href="index.html">Rezervasyon Yap</a></li>
+						<li><a href="rezervasyonlarim.html">Rezervasyonlarım</a></li>
+						<li><a href="admin.html">Admin Paneli</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-section contact">
+					<h4>Bize Ulaşın</h4>
+					<p>
+						<i class="fas fa-map-marker-alt"></i>Lorem Cad. No:123, İstanbul
+					</p>
+					<p><i class="fas fa-phone"></i> +90 531 736 17 77</p>
+					<p><i class="fas fa-envelope"></i> info@rezervaura.com</p>
+					<p><i class="fas fa-clock"></i> Her Gün: 10:00 - 23:00</p>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>&copy; 2025 RezervAura. Tüm Hakları Saklıdır.</p>
+				<div class="footer-policy-links">
+					<a href="gizlilik-politikasi.html" target="_blank"
+						>Gizlilik Politikası</a
+					>
+					<span>|</span>
+					<a href="kullanim-kosullari.html" target="_blank"
+						>Kullanım Koşulları</a
+					>
+				</div>
+			</div>
+		</footer>
+
+		<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+		<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

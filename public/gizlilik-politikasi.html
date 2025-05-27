@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="tr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>RezervAura - Gizlilik Politikası</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@700&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			:root {
+				--birincil-renk: #4a69bd;
+				--ikincil-renk: #78a3c8;
+				--vurgu-renk: #f7a4a4;
+				--metin-koyu: #333;
+				--metin-acik: #f8f8f8;
+				--arka-plan-acik: #f0f4f8;
+				--kart-arka-plan: #ffffff;
+				--kenarlik-acik: #e0e0e0;
+				--golge-hafif: rgba(0, 0, 0, 0.08);
+				--golge-hover: rgba(0, 0, 0, 0.15);
+
+				--politika-baslik-renk: #6a0dad;
+				--politika-alt-baslik-renk: #4a69bd;
+				--politika-madde-vurgu-renk: #8b4513;
+				--politika-gri-metin: #666;
+				--politika-kucuk-gri-metin: #777;
+			}
+
+			.privacy-policy-page {
+				font-family: "Open Sans", sans-serif;
+				background: linear-gradient(
+					135deg,
+					var(--arka-plan-acik) 0%,
+					var(--kart-arka-plan) 100%
+				);
+				color: var(--metin-koyu);
+				line-height: 1.6;
+				display: flex;
+				flex-direction: column;
+				min-height: 100vh;
+			}
+
+			.privacy-policy-page .main-content {
+				flex-grow: 1;
+				padding: 2rem 1.5rem;
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;
+			}
+
+			.card-container.privacy-container {
+				background-color: var(--kart-arka-plan);
+				border-radius: 12px;
+				box-shadow: 0 8px 25px var(--golge-hafif);
+				padding: 2.5rem;
+				margin: 2rem auto;
+				max-width: 900px;
+				width: 100%;
+				box-sizing: border-box;
+				text-align: left;
+			}
+
+			.page-title {
+				font-family: "Poppins", sans-serif;
+				font-size: 2.8rem;
+				color: var(--politika-baslik-renk);
+				text-align: center;
+				margin-bottom: 2.5rem;
+				text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+			}
+
+			.privacy-section {
+				margin-bottom: 2.5rem;
+				padding-bottom: 1.5rem;
+				border-bottom: 1px dashed var(--kenarlik-acik);
+			}
+
+			.privacy-section:last-of-type {
+				border-bottom: none;
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+
+			.privacy-section h2 {
+				font-family: "Poppins", sans-serif;
+				font-size: 1.8rem;
+				color: var(--politika-alt-baslik-renk);
+				margin-bottom: 1.2rem;
+				position: relative;
+				padding-bottom: 10px;
+			}
+
+			.privacy-section h2::after {
+				content: "";
+				position: absolute;
+				width: 80px;
+				height: 3px;
+				background-color: var(--ikincil-renk);
+				border-radius: 2px;
+				left: 0;
+				bottom: 0;
+			}
+
+			.privacy-section p {
+				margin-bottom: 1rem;
+				line-height: 1.7;
+				color: var(--metin-koyu);
+			}
+
+			.privacy-section p strong {
+				color: var(--politika-madde-vurgu-renk);
+			}
+
+			.privacy-section ul {
+				list-style-type: disc;
+				margin-left: 25px;
+				padding-left: 0;
+				margin-bottom: 1rem;
+			}
+
+			.privacy-section ul li {
+				margin-bottom: 0.8rem;
+				line-height: 1.6;
+			}
+
+			.privacy-section ul li strong {
+				color: var(--politika-madde-vurgu-renk);
+			}
+
+			.privacy-section p.last-updated {
+				text-align: right;
+				margin-top: 30px;
+				font-size: 0.85em;
+				color: var(--politika-gri-metin);
+			}
+
+			.privacy-section a {
+				color: var(--birincil-renk);
+				text-decoration: none;
+				font-weight: 600;
+				transition: color 0.3s ease;
+			}
+
+			.privacy-section a:hover {
+				color: var(--ikincil-renk);
+				text-decoration: underline;
+			}
+
+			@media (max-width: 768px) {
+				.card-container.privacy-container {
+					padding: 1.5rem;
+					margin: 1.5rem auto;
+				}
+				.page-title {
+					font-size: 2.2rem;
+					margin-bottom: 2rem;
+				}
+				.privacy-section h2 {
+					font-size: 1.5rem;
+				}
+			}
+
+			@media (max-width: 480px) {
+				.card-container.privacy-container {
+					padding: 1rem;
+					margin: 1rem auto;
+				}
+				.page-title {
+					font-size: 1.8rem;
+					margin-bottom: 1.5rem;
+				}
+				.privacy-section h2 {
+					font-size: 1.3rem;
+				}
+				.privacy-section ul {
+					margin-left: 15px;
+				}
+			}
+		</style>
+	</head>
+	<body class="privacy-policy-page">
+		<main class="main-content">
+			<div class="card-container privacy-container">
+				<h1 class="page-title">Gizlilik Politikası</h1>
+
+				<section class="privacy-section">
+					<h2>1. Topladığımız Bilgiler</h2>
+					<p>
+						RezervAura Rezervasyon Sistemi olarak, rezervasyon hizmetlerimizi
+						sunabilmek için sizlerden belirli kişisel bilgiler toplarız. Bu
+						bilgiler şunları içerebilir:
+					</p>
+					<ul>
+						<li>
+							<strong>Ad Soyad:</strong> Rezervasyonunuzu tanımlamak ve size
+							özel bir deneyim sunmak için.
+						</li>
+						<li>
+							<strong>Telefon Numarası:</strong> Rezervasyon teyidi,
+							değişiklikler veya iptaller hakkında sizinle iletişime geçmek
+							için.
+						</li>
+						<li>
+							<strong>Kişi Sayısı:</strong> Masa düzenlemesini sağlamak ve
+							restoran kapasitesini yönetmek için.
+						</li>
+						<li>
+							<strong>Tarih ve Saat:</strong> Rezervasyonunuzun ne zaman
+							yapılacağını belirlemek için.
+						</li>
+					</ul>
+					<p>
+						Bu bilgiler, yalnızca rezervasyon işlemlerinizi gerçekleştirmek ve
+						size daha iyi hizmet sunmak amacıyla toplanmaktadır.
+					</p>
+				</section>
+
+				<section class="privacy-section">
+					<h2>2. Bilgileri Nasıl Kullanıyoruz?</h2>
+					<p>Topladığımız bilgileri aşağıdaki amaçlarla kullanırız:</p>
+					<ul>
+						<li>Rezervasyon taleplerinizi işlemek ve yönetmek.</li>
+						<li>
+							Rezervasyonunuzla ilgili onay, değişiklik veya iptal
+							bildirimlerini iletmek.
+						</li>
+						<li>Restoranın masa ve kapasite yönetimini sağlamak.</li>
+						<li>
+							Hizmetlerimizi geliştirmek ve kullanıcı deneyimini iyileştirmek.
+						</li>
+						<li>Yasal yükümlülüklerimizi yerine getirmek.</li>
+					</ul>
+					<p>
+						Bilgileriniz, açık rızanız olmadan üçüncü taraflarla paylaşılmaz
+						veya ticari amaçlarla kullanılmaz. Yalnızca yasal zorunluluklar veya
+						hizmet sağlayıcılarımızla (örneğin Firebase Firestore gibi veri
+						tabanı hizmetleri) teknik entegrasyonlar kapsamında gerekli minimum
+						bilgiler paylaşılabilir.
+					</p>
+				</section>
+
+				<section class="privacy-section">
+					<h2>3. Veri Güvenliği</h2>
+					<p>
+						Kişisel bilgilerinizin güvenliğini sağlamak için gerekli teknik ve
+						idari önlemleri almaktayız. Bilgileriniz, yetkisiz erişim, kullanım
+						veya ifşa edilmeye karşı korunmaktadır. Veri tabanımız, sektör
+						standartlarına uygun güvenlik protokolleriyle korunmaktadır.
+					</p>
+				</section>
+
+				<section class="privacy-section">
+					<h2>4. Çerezler (Cookies)</h2>
+					<p>
+						Web sitemiz, kullanıcı deneyimini iyileştirmek ve site performansını
+						analiz etmek amacıyla çerezler kullanabilir. Çerezler, tarayıcınız
+						aracılığıyla bilgisayarınızda depolanan küçük metin dosyalarıdır.
+						Tarayıcınızın ayarlarından çerezleri dilediğiniz zaman devre dışı
+						bırakabilir veya silebilirsiniz.
+					</p>
+				</section>
+
+				<section class="privacy-section">
+					<h2>5. Haklarınız</h2>
+					<p>
+						Kişisel verilerinizle ilgili olarak aşağıdaki haklara sahipsiniz:
+					</p>
+					<ul>
+						<li>Kişisel verilerinizin işlenip işlenmediğini öğrenme.</li>
+						<li>
+							Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme.
+						</li>
+						<li>
+							Kişisel verilerinizin işlenme amacını ve bunların amacına uygun
+							kullanılıp kullanılmadığını öğrenme.
+						</li>
+						<li>
+							Yurt içinde veya yurt dışında kişisel verilerin aktarıldığı üçüncü
+							kişileri bilme.
+						</li>
+						<li>
+							Kişisel verilerin eksik veya yanlış işlenmiş olması hâlinde
+							bunların düzeltilmesini isteme.
+						</li>
+						<li>
+							İlgili mevzuatta öngörülen şartlar çerçevesinde kişisel verilerin
+							silinmesini veya yok edilmesini isteme.
+						</li>
+						<li>
+							Yukarıdaki (e) ve (f) bentleri uyarınca yapılan işlemlerin,
+							kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini
+							isteme.
+						</li>
+						<li>
+							İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz
+							edilmesi suretiyle kişinin kendisi aleyhine bir sonucun ortaya
+							çıkmasına itiraz etme.
+						</li>
+						<li>
+							Kişisel verilerin kanuna aykırı olarak işlenmesi sebebiyle zarara
+							uğraması hâlinde zararın giderilmesini talep etme.
+						</li>
+					</ul>
+					<p>
+						Bu haklarınızı kullanmak için lütfen
+						<a href="#">info@rezervaura.com </a>üzerinden bizimle iletişime
+						geçin.
+					</p>
+				</section>
+
+				<section class="privacy-section">
+					<h2>6. Politika Değişiklikleri</h2>
+					<p>
+						Bu Gizlilik Politikası zaman zaman güncellenebilir. Güncellenmiş
+						politika, web sitemizde yayınlandığı tarihte yürürlüğe girer.
+						Herhangi bir değişiklik için bu sayfayı düzenli olarak gözden
+						geçirmenizi tavsiye ederiz.
+					</p>
+				</section>
+
+				<section class="privacy-section">
+					<h2>7. Bize Ulaşın</h2>
+					<p>
+						Gizlilik Politikamız hakkında sorularınız veya yorumlarınız varsa,
+						lütfen bizimle iletişime geçmekten çekinmeyin:
+					</p>
+					<p><strong>E-posta:</strong>info@rezervaura.com</p>
+					<p><strong>Telefon:</strong> +90 (531) 736 17 77</p>
+				</section>
+
+				<p class="last-updated">Son Güncelleme: 27 Mayıs 2025</p>
+			</div>
+		</main>
+	</body>
+</html>

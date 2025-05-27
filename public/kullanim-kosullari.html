@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="tr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>RezervAura - Kullanım Koşulları</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@700&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			:root {
+				--birincil-renk: #4a69bd;
+				--ikincil-renk: #78a3c8;
+				--vurgu-renk: #f7a4a4;
+				--metin-koyu: #333;
+				--metin-acik: #f8f8f8;
+				--arka-plan-acik: #f0f4f8;
+				--kart-arka-plan: #ffffff;
+				--kenarlik-acik: #e0e0e0;
+				--golge-hafif: rgba(0, 0, 0, 0.08);
+				--golge-hover: rgba(0, 0, 0, 0.15);
+
+				--kosullar-baslik-renk: #6a0dad;
+				--kosullar-alt-baslik-renk: #4a69bd;
+				--kosullar-madde-vurgu-renk: #8b4513;
+				--kosullar-gri-metin: #666;
+				--kosullar-kucuk-gri-metin: #777;
+			}
+
+			.terms-page {
+				font-family: "Open Sans", sans-serif;
+				background: linear-gradient(
+					135deg,
+					var(--arka-alan-acik) 0%,
+					var(--kart-arka-alan) 100%
+				);
+				color: var(--metin-koyu);
+				line-height: 1.6;
+				display: flex;
+				flex-direction: column;
+				min-height: 100vh;
+			}
+
+			.terms-page .main-content {
+				flex-grow: 1;
+				padding: 2rem 1.5rem;
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;
+			}
+
+			.card-container.terms-container {
+				background-color: var(--kart-arka-plan);
+				border-radius: 12px;
+				box-shadow: 0 8px 25px var(--golge-hafif);
+				padding: 2.5rem;
+				margin: 2rem auto;
+				max-width: 900px;
+				width: 100%;
+				box-sizing: border-box;
+				text-align: left;
+			}
+
+			.page-title {
+				font-family: "Poppins", sans-serif;
+				font-size: 2.8rem;
+				color: var(--kosullar-baslik-renk);
+				text-align: center;
+				margin-bottom: 2.5rem;
+				text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+			}
+
+			.terms-section {
+				margin-bottom: 2.5rem;
+				padding-bottom: 1.5rem;
+				border-bottom: 1px dashed var(--kenarlik-acik);
+			}
+
+			.terms-section:last-of-type {
+				border-bottom: none;
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+
+			.terms-section h2 {
+				font-family: "Poppins", sans-serif;
+				font-size: 1.8rem;
+				color: var(--kosullar-alt-baslik-renk);
+				margin-bottom: 1.2rem;
+				position: relative;
+				padding-bottom: 10px;
+			}
+
+			.terms-section h2::after {
+				content: "";
+				position: absolute;
+				width: 80px;
+				height: 3px;
+				background-color: var(--ikincil-renk);
+				border-radius: 2px;
+				left: 0;
+				bottom: 0;
+			}
+
+			.terms-section p {
+				margin-bottom: 1rem;
+				line-height: 1.7;
+				color: var(--metin-koyu);
+			}
+
+			.terms-section p strong {
+				color: var(--kosullar-madde-vurgu-renk);
+			}
+
+			.terms-section ul {
+				list-style-type: decimal;
+				margin-left: 25px;
+				padding-left: 0;
+				margin-bottom: 1rem;
+			}
+
+			.terms-section ul li {
+				margin-bottom: 0.8rem;
+				line-height: 1.6;
+			}
+
+			.terms-section ul li strong {
+				color: var(--kosullar-madde-vurgu-renk);
+			}
+
+			.terms-section p.last-updated {
+				text-align: right;
+				margin-top: 30px;
+				font-size: 0.85em;
+				color: var(--kosullar-gri-metin);
+			}
+
+			.terms-section a {
+				color: var(--birincil-renk);
+				text-decoration: none;
+				font-weight: 600;
+				transition: color 0.3s ease;
+			}
+
+			.terms-section a:hover {
+				color: var(--ikincil-renk);
+				text-decoration: underline;
+			}
+
+			@media (max-width: 768px) {
+				.card-container.terms-container {
+					padding: 1.5rem;
+					margin: 1.5rem auto;
+				}
+				.page-title {
+					font-size: 2.2rem;
+					margin-bottom: 2rem;
+				}
+				.terms-section h2 {
+					font-size: 1.5rem;
+				}
+			}
+
+			@media (max-width: 480px) {
+				.card-container.terms-container {
+					padding: 1rem;
+					margin: 1rem auto;
+				}
+				.page-title {
+					font-size: 1.8rem;
+					margin-bottom: 1.5rem;
+				}
+				.terms-section h2 {
+					font-size: 1.3rem;
+				}
+				.terms-section ul {
+					margin-left: 15px;
+				}
+			}
+		</style>
+	</head>
+	<body class="terms-page">
+		<main class="main-content">
+			<div class="card-container terms-container">
+				<h1 class="page-title">Kullanım Koşulları</h1>
+
+				<section class="terms-section">
+					<h2>1. Hizmetin Tanımı ve Kapsamı</h2>
+					<p>
+						RezervAura Rezervasyon Sistemi, kullanıcıların RezervAura
+						restoranında online olarak masa rezervasyonu yapmalarını sağlayan
+						bir platformdur. Bu hizmet, rezervasyon taleplerinin alınması,
+						işlenmesi ve onaylanması süreçlerini kapsar.
+					</p>
+					<p>
+						Bu koşullar, sistemimizi kullanarak gerçekleştireceğiniz tüm
+						etkileşimler ve işlemler için geçerlidir.
+					</p>
+				</section>
+
+				<section class="terms-section">
+					<h2>2. Rezervasyon Prosedürü</h2>
+					<ul>
+						<li>
+							Kullanıcılar, rezervasyon formunda istenen **Ad Soyad**, **Telefon
+							Numarası**, **Kişi Sayısı**, **Tarih** ve **Saat** bilgilerini
+							eksiksiz ve doğru girmelidir.
+						</li>
+						<li>
+							Gönderilen rezervasyon talepleri, restoranın o anki müsaitlik
+							durumuna göre değerlendirilir.
+						</li>
+						<li>
+							Rezervasyonunuzun onaylanması veya reddedilmesi durumunda size
+							**telefon** veya **e-posta** yoluyla bildirim yapılacaktır. Onay
+							mesajı almadan rezervasyonunuz kesinleşmiş sayılmaz.
+						</li>
+						<li>
+							Yoğunluk durumunda, belirtilen saatten **15 dakika** sonra
+							gelmeyen rezervasyonlar otomatik olarak iptal edilebilir.
+						</li>
+					</ul>
+				</section>
+
+				<section class="terms-section">
+					<h2>3. Kullanıcı Yükümlülükleri</h2>
+					<ul>
+						<li>
+							Kullanıcılar, sisteme girdikleri bilgilerin **doğruluğundan**
+							sorumludur. Yanlış veya eksik bilgi girişinden kaynaklanan
+							sorunlardan sistem sorumlu değildir.
+						</li>
+						<li>
+							Sistemi, yürürlükteki yasalara ve genel ahlak kurallarına uygun
+							olarak kullanmayı kabul edersiniz.
+						</li>
+						<li>
+							Herhangi bir otomatik bot, yazılım veya araç kullanarak toplu
+							rezervasyon yapmaya çalışmak yasaktır.
+						</li>
+						<li>
+							Sistemin işleyişini bozacak veya engelleyecek herhangi bir
+							faaliyette bulunmak kesinlikle yasaktır.
+						</li>
+					</ul>
+				</section>
+
+				<section class="terms-section">
+					<h2>4. İptal ve Değişiklikler</h2>
+					<ul>
+						<li>
+							Rezervasyonunuzda değişiklik yapmak veya iptal etmek isterseniz,
+							lütfen rezervasyon saatinizden en az **2 saat önce** [Telefon
+							Numaranız] veya [E-posta Adresiniz] üzerinden bizimle iletişime
+							geçin.
+						</li>
+						<li>
+							Son dakika iptalleri veya habersiz gelinmemesi durumunda,
+							restoranın politikaları gereği gelecekteki rezervasyon
+							taleplerinizde kısıtlama uygulanabilir.
+						</li>
+					</ul>
+				</section>
+
+				<section class="terms-section">
+					<h2>5. Fikri Mülkiyet Hakları</h2>
+					<p>
+						Bu web sitesinin tüm içeriği; metinler, grafikler, logolar, ikonlar,
+						resimler, ses klipleri, dijital indirmeler ve yazılımlar RezervAura
+						Rezervasyon Sistemi'ne veya içerik sağlayıcılarına aittir ve
+						uluslararası telif hakkı yasalarıyla korunmaktadır.
+					</p>
+				</section>
+
+				<section class="terms-section">
+					<h2>6. Sorumluluk Reddi</h2>
+					<p>
+						Sistemimiz, "olduğu gibi" ve "müsait olduğu kadar" esasına göre
+						sunulmaktadır. RezervAura Rezervasyon Sistemi, hizmetin kesintisiz,
+						hatasız veya güvenli olacağına dair herhangi bir garanti vermez.
+						Rezervasyonunuzun onaylanmaması veya hizmetin aksaması durumunda
+						doğabilecek doğrudan veya dolaylı zararlardan sorumlu tutulamaz.
+					</p>
+				</section>
+
+				<section class="terms-section">
+					<h2>7. Politika Değişiklikleri</h2>
+					<p>
+						RezervAura Rezervasyon Sistemi, bu Kullanım Koşullarını dilediği
+						zaman değiştirme hakkını saklı tutar. Değişiklikler, web sitemizde
+						yayınlandığı tarihte yürürlüğe girer. Hizmetlerimizi kullanmaya
+						devam etmeniz, güncellenmiş koşulları kabul ettiğiniz anlamına
+						gelir.
+					</p>
+				</section>
+
+				<section class="terms-section">
+					<h2>8. İletişim Bilgileri</h2>
+					<p>
+						Kullanım Koşulları hakkında sorularınız veya yorumlarınız varsa,
+						lütfen bizimle iletişime geçmekten çekinmeyin:
+					</p>
+					<p><strong>E-posta:</strong>info@rezervaura.com</p>
+					<p><strong>Telefon:</strong> +90 (531) 736 17 77</p>
+				</section>
+
+				<p class="last-updated">Son Güncelleme: 27 Mayıs 2025</p>
+			</div>
+		</main>
+	</body>
+</html>

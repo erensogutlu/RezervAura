@@ -1,0 +1,14 @@
+{
+  "name": "booking",
+  "version": "1.0.0",
+  "description": "Modern Kafe Rezervasyon Sitesi",
+  "main": "index.js",
+
+  "dependencies": {
+    "firebase": "^11.8.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.4.38"
+  }
+}
