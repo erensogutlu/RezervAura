@@ -161,3 +161,25 @@ window.addEventListener("resize", () => {
 		navLinks.style.display = "none";
 	}
 });
+
+// loader
+const loader = document.getElementById("loader-wrapper");
+
+const MIN_LOAD_TIME = 500;
+const startTime = Date.now();
+
+window.addEventListener("load", () => {
+	const elapsed = Date.now() - startTime;
+	const remaining = MIN_LOAD_TIME - elapsed;
+
+	setTimeout(
+		() => {
+			loader.style.opacity = "0";
+			setTimeout(() => {
+				loader.style.display = "none";
+			}, 500);
+		},
+		remaining > 0 ? remaining : 0
+	);
+});
+
