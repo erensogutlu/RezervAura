@@ -595,26 +595,6 @@ table tbody td button {
 	}
 }
 
-@media (max-width: 480px) {
-	.button {
-		width: 100% !important;
-	}
-}
-
-@media (max-width: 768px) {
-	table {
-		display: block;
-		overflow-x: auto;
-		white-space: nowrap;
-	}
-}
-
-@media (max-width: 480px) {
-	table td button {
-		margin-bottom: 10px;
-	}
-}
-
 #loader-wrapper {
 	position: fixed;
 	top: 0;
