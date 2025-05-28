@@ -19,6 +19,7 @@ body {
 	font-family: "Nunito", sans-serif;
 	background-color: var(--arka-plan-renk);
 	color: var(--metin-renk);
+	overflow-x: hidden;
 }
 
 button {
@@ -562,5 +563,86 @@ table tbody td button {
 	table td button {
 		width: 100%;
 		margin-top: 10px;
+	}
+}
+
+@media (max-width: 480px) {
+	table td button {
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 768px) {
+	.navbar .nav-links {
+		display: none;
+		flex-direction: column;
+		width: 100%;
+		background-color: var(--ana-renk);
+		margin-top: 15px;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.navbar .nav-links.active {
+		display: flex;
+	}
+
+	.toggle-btn {
+		display: block;
+		position: absolute;
+		right: 20px;
+		top: 18px;
+	}
+}
+
+@media (max-width: 480px) {
+	.button {
+		width: 100% !important;
+	}
+}
+
+@media (max-width: 768px) {
+	table {
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+}
+
+@media (max-width: 480px) {
+	table td button {
+		margin-bottom: 10px;
+	}
+}
+
+#loader-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #ffffff;
+	z-index: 9999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: opacity 0.5s ease;
+}
+
+.loader {
+	border: 8px solid #e0e0e0;
+	border-top: 8px solid var(--ana-renk);
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
 	}
 }
