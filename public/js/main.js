@@ -301,8 +301,3 @@ window.addEventListener("load", () => {
 		remaining > 0 ? remaining : 0
 	);
 });
-
-// sayfayı her 10 dakikada bir yenile
-setInterval(() => {
-	location.reload();
-}, 600000); // 10 dakika
